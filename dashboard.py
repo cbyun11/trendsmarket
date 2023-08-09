@@ -85,7 +85,7 @@ with col3:
                  alpha=0.8)
 
         # Add labels
-        plt.text(0.5, 0.7, f"{value} Days", fontsize=18, ha='center', va='center', color='#E0EAEF')
+        plt.text(0.5, 0.7, f"{value} Days", fontsize=18, ha='center', va='center', color='#262C46')
         # plt.text(0.5, 0.85, label, fontsize=12, ha='center', va='center')
 
         ax.set_xlim(0, 1)
