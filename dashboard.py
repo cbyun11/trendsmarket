@@ -71,7 +71,7 @@ with col3:
         # Create a half-circle gauge using matplotlib
         fig, ax = plt.subplots(subplot_kw={'aspect': 'equal'})
         fig.set_alpha(0)
-        ax.set_alpha(0)
+        ax.set_facecolor('#262C46')
         ax.add_patch(
             patches.Arc((0.5, 0.5), 0.8, 0.8, theta1=0, theta2=180, facecolor='white', edgecolor='white', lw=3))
         ax.add_patch(
