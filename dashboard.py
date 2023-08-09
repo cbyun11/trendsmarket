@@ -14,35 +14,6 @@ st.set_page_config(
     layout="wide"
 )
 
-backgroundColor = "#262C46"
-primaryColor = "#262C46",
-secondaryBackgroundColor = "#ffffff",
-textColor = "#003d5b",
-font = "Arial"
-
-# Custom theme using CSS
-custom_css = f"""
-    <style>
-    /* General Styling */
-    .reportview-container {
-        background-color: #262C46;
-    }
-    /* Header Styling */
-    h1, h2, h3, h4, h5, h6 {{
-        color: {primaryColor};
-    }}
-    
-    /* Data Table Styling */
-    .dataframe, th, td {{
-        border: 1px solid #262C46;
-    }}
-    </style>
-"""
-
-# Apply the custom theme using st.markdown()
-st.markdown(custom_css, unsafe_allow_html=True)
-
-
 # load data using pandas
 df = pd.read_csv('final_data.csv', na_values='NULL')
 
