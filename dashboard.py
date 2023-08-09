@@ -188,10 +188,7 @@ with col6:
         unsafe_allow_html=True
     )
     s_week = s.groupby('Week')['DOI'].mean().reset_index()
-    plost.bar_chart(data=s_week['DOI'],
-                   bar='Week',
-                   value='DOI',
-                   y_annot = 200)
+    st.bar_chart(data=s_week['DOI'])
 
 with col7:
     st.markdown(
