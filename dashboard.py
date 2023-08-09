@@ -161,9 +161,9 @@ with col7:
     stock_summary.index = stock_summary['Description']
     st.dataframe(stock_summary[['SalesQuantity', 'PurchaseQuantity', 'EndInv']], height=350)
 
-    if stock_summary['EndInv'].min() < 100:
-        brand = stock_summary[stock_summary['EndInv'].min() < 100]['Description']
-        st.warning(f'The units in stock for {brand} is below our target')
+   # if stock_summary['EndInv'].min() < 100:
+        # brand = stock_summary[stock_summary['EndInv'].min() < 100]['Description']
+       # st.warning(f'The units in stock for {brand} is below our target')
 with col8:
     st.markdown(
         """
