@@ -24,7 +24,7 @@ font = "Arial"
 custom_css = f"""
     <style>
     /* General Styling */
-    body {{
+    stapp {{
         background-color: {'#262C46'};
         color: {'#E0EAEF'};
         font-family: {font}, sans-serif;
@@ -33,22 +33,11 @@ custom_css = f"""
     h1, h2, h3, h4, h5, h6 {{
         color: {primaryColor};
     }}
-    /* Sidebar Styling */
-    .sidebar .sidebar-content {{
-        background-color: {secondaryBackgroundColor};
-    }}
-    /* Button Styling */
-    .stButton {{
-        background-color: {primaryColor};
-        color: #fff; /* White text */
-        font-weight: bold;
-    }}
+    
     /* Data Table Styling */
     .dataframe, th, td {{
-        border: 1px solid {primaryColor};
+        border: 1px solid {#262C46};
     }}
-    /* Other Customizations */
-    /* Add your additional CSS customizations here */
     </style>
 """
 
