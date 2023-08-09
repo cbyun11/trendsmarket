@@ -35,7 +35,7 @@ custom_css = f"""
     
     /* Data Table Styling */
     .dataframe, th, td {{
-        border: 1px solid {#262C46};
+        border: 1px solid #262C46;
     }}
     </style>
 """
