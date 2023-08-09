@@ -162,7 +162,7 @@ with col7:
     st.dataframe(stock_summary[['SalesQuantity', 'PurchaseQuantity', 'EndInv']], height=350)
 
     if stock_summary['EndInv'].min() < 100:
-        st.warning('The units in stock is below our target', icon="⚠️")
+        st.warning('The units in stock is below our target')
 with col8:
     st.markdown(
         """
