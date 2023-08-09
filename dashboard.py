@@ -13,9 +13,11 @@ st.set_page_config(
     page_icon="✅",
     layout="wide"
 )
+[theme]
+backgroundColor = "#262C46"
 
 primaryColor = "#262C46",
-backgroundColor = "#262C46",
+
 secondaryBackgroundColor = "#ffffff",
 textColor = "#003d5b",
 font = "Arial"
