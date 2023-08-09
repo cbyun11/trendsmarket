@@ -28,9 +28,9 @@ w = s[s['Week'] == week_filter]
 
 col1, col2, col3 = st.columns(3)
 with col1:
-    total_sales = w['TotalSalesPrice'].round(2).sum()
+    total_sales = w['TotalSalesPrice'].sum()
     st.header('Total Sales')
-    st.subheader(f'${total_sales}')
+    st.subheader(f'${round(total_sales, 2}')
 
     st.header('Total Inventory')
     st.subheader(w['EndInv'].sum())
