@@ -24,7 +24,7 @@ font = "Arial"
 custom_css = f"""
     <style>
     /* General Styling */
-    .stapp {{
+    .reportview-container {
         background-color: #262C46;
         color: #E0EAEF;
     }}
