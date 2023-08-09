@@ -27,7 +27,7 @@ custom_css = f"""
     .reportview-container {
         background-color: #262C46;
         color: #E0EAEF;
-    }}
+    }
     /* Header Styling */
     h1, h2, h3, h4, h5, h6 {{
         color: {primaryColor};
