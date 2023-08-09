@@ -73,7 +73,7 @@ with col3:
         fig.set_alpha(0)
         ax.set_facecolor('#262C46')
         ax.add_patch(
-            patches.Arc((0.5, 0.5), 0.8, 0.8, theta1=0, theta2=180, facecolor='white', edgecolor='#262C46', lw=3))
+            patches.Arc((0.5, 0.5), 0.8, 0.8, theta1=0, theta2=180, facecolor='#262C46', edgecolor='white', lw=3))
         ax.add_patch(
             patches.Arc((0.5, 0.5), 0.8, 0.8, theta1=180 - angle, theta2=180, facecolor='red', edgecolor='red', lw=3))
 
