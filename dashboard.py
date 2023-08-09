@@ -25,8 +25,8 @@ custom_css = f"""
     <style>
     /* General Styling */
     body {{
-        background-color: {#262C46};
-        color: {#E0EAEF};
+        background-color: {'#262C46'};
+        color: {'#E0EAEF'};
         font-family: {font}, sans-serif;
     }}
     /* Header Styling */
