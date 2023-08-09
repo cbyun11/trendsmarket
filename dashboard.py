@@ -189,49 +189,6 @@ with col5:
         value='total_purchases_quantity',
         direction='horizontal')
 
-
-    # Define the target days outstanding
-    target_days = 14
-
-    # Create a bar chart using matplotlib
-    # fig, ax = plt.subplots()
-    # s_week = s.groupby('Week')['DOI'].mean()
-    # bars = ax.bar(s_week.index, s_week.values, color='b', label='Days Outstanding')
-    # ax.axhline(y=target_days, color='r', linestyle='--', label='Target')
-    #
-    # ax.set_xlabel('Week')
-    # ax.set_ylabel('Days Outstanding')
-    # ax.set_title('Inventory Days Outstanding by Week')
-    # ax.legend()
-    #
-    # # Display the bar chart in Streamlit
-    # st.pyplot(fig)
-
-#  # Calculate the average sales
-   #  # average_DOI =
-   #
-   #  # Create the bar chart using Altair
-   #  bar_chart = alt.Chart(s).mark_bar().encode(
-   #      x='Week',
-   #      y='Days Inventory Outstanding',
-   #      color=alt.ColorValue('steelblue'),  # Bar color
-   #  ).properties(
-   #      width=500,  # Chart width
-   #      height=300  # Chart height
-   #  )
-   #
-   #  # Create the target line using Altair
-   #  #target_line = alt.Chart(pd.DataFrame({'Average Sales': [average_sales]})).mark_rule().encode(
-   #      # y='Average Sales',
-   #      # color=alt.ColorValue('red'),  # Target line color
-   # # )
-   #
-   #  # Combine the bar chart and the target line
-   #  combined_chart = bar_chart # + target_line
-   #
-   #  # Display the chart in Streamlit
-   #  st.altair_chart(combined_chart)
-
 col6, col7, col8 = st.columns(3)
 with col6:
     st.markdown(
@@ -243,7 +200,10 @@ with col6:
         unsafe_allow_html=True
     )
     s_week = s.groupby('Week')['DOI'].mean().reset_index()
-    st.bar_chart(data=s_week['DOI'])
+    plost.bar_chart(data=s_week['DOI']
+                   x='Week',
+                   y='DOI',
+                   y_annot = 200)
 
 with col7:
     st.markdown(
