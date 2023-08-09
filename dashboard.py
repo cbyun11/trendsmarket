@@ -25,9 +25,8 @@ custom_css = f"""
     <style>
     /* General Styling */
     stapp {{
-        background-color: {'#262C46'};
-        color: {'#E0EAEF'};
-        font-family: {font}, sans-serif;
+        background-color: #262C46;
+        color: #E0EAEF;
     }}
     /* Header Styling */
     h1, h2, h3, h4, h5, h6 {{
