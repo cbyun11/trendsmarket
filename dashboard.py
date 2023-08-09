@@ -159,7 +159,7 @@ with col7:
     )
     stock_summary = s[s['Week'] == 9].groupby('Description')[['SalesQuantity', 'PurchaseQuantity', 'EndInv']].sum().reset_index()
     stock_summary.index = stock_summary['Description']
-    st.dataframe(stock_summary[['SalesQuantity', 'PurchaseQuantity', 'EndInv']], use_container_width=True, height=350)
+    st.dataframe(stock_summary[['SalesQuantity', 'PurchaseQuantity', 'EndInv']], height=350, use_container_width=True)
 
     if stock_summary['EndInv'].min() < 100:
         st.warning('The units in stock is below our target')
