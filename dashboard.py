@@ -156,21 +156,6 @@ with col4:
         """,
         unsafe_allow_html=True
     )
-    # NEW DATA SET FOR BRAND
-    # st.line_chart(data=s['InventoryTurnover'])
-    brand_filter = st.selectbox("Select a brand", pd.unique(s["Brand"].sort_values()))
-    b = s[s['Brand'] == brand_filter]
-    b.index = range(1, 10)
-    # Create a line chart using matplotlib
-    # fig, ax = plt.subplots()
-    # ax.plot(b['Week'], b['InventoryTurnover'], marker='o', color='b', label='Inventory Turnover')
-    # ax.set_xlabel('Week')
-    # ax.set_ylabel('Turnover')
-    # ax.set_title('Inventory Turnover by Week')
-    # ax.legend()
-    #
-    # # Display the line chart in Streamlit
-    # st.pyplot(fig)
     st.line_chart(b['InventoryTurnover'])
 
 with col5:
@@ -201,8 +186,8 @@ with col6:
     )
     s_week = s.groupby('Week')['DOI'].mean().reset_index()
     plost.bar_chart(data=s_week['DOI']
-                   x='Week',
-                   y='DOI',
+                   bar='Week',
+                   value='DOI',
                    y_annot = 200)
 
 with col7:
