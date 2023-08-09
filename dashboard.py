@@ -156,6 +156,9 @@ with col4:
         """,
         unsafe_allow_html=True
     )
+    brand_filter = st.selectbox("Select a brand", pd.unique(s["Brand"].sort_values()))
+    b = s[s['Brand'] == brand_filter]
+    b.index = range(1, 10)
     st.line_chart(b['InventoryTurnover'])
 
 with col5:
