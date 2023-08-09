@@ -163,6 +163,8 @@ with col7:
 
     if stock_summary['EndInv'].min() < 100:
         brands = []
+        for b in stock_summary[stock_summary['EndInv'] < 100]['Description']:
+            brands.append(b)
         st.warning(f'The units in stock for {brands} is below our target')
 with col8:
     st.markdown(
