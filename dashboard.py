@@ -13,11 +13,9 @@ st.set_page_config(
     page_icon="✅",
     layout="wide"
 )
-[theme]
+
 backgroundColor = "#262C46"
-
 primaryColor = "#262C46",
-
 secondaryBackgroundColor = "#ffffff",
 textColor = "#003d5b",
 font = "Arial"
@@ -27,8 +25,8 @@ custom_css = f"""
     <style>
     /* General Styling */
     body {{
-        background-color: {backgroundColor};
-        color: {textColor};
+        background-color: {#262C46};
+        color: {#E0EAEF};
         font-family: {font}, sans-serif;
     }}
     /* Header Styling */
