@@ -175,5 +175,5 @@ with col8:
         """,
         unsafe_allow_html=True
     )
-st.area_chart(s[['TotalSalesPrice', 'COGS']])
+    
 
