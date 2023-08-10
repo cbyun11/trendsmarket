@@ -49,7 +49,28 @@ with col2:
     )
     brand_sales = s.groupby('Brand')['InventoryValue'].sum().reset_index().head(10)
     brand_sales.index = brand_sales['Brand']
-    st.bar_chart(brand_sales['InventoryValue'])
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 # min and max to be 1st and 3rd quartile values
 # with col3:
 #     st.markdown(
