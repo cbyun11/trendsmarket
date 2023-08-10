@@ -26,7 +26,7 @@ s = df[df['Store'] == store_filter]
 week_filter = st.selectbox("Select a week", pd.unique(s["Week"].sort_values()))
 w = s[s['Week'] == week_filter]
 
-col1, col2, col3 = st.columns(3)
+col1, col2 = st.columns(2)
 with col1:
     total_sales = w['TotalSalesPrice'].sum().round(2)
     st.header('Total Sales')
@@ -51,58 +51,58 @@ with col2:
     brand_sales.index = brand_sales['Brand']
     st.bar_chart(brand_sales['InventoryValue'])
 # min and max to be 1st and 3rd quartile values
-with col3:
-    st.markdown(
-        """
-        <div style="text-align:center">
-            <h3>Days Inventory Outstanding</h3>
-        </div>
-        """,
-        unsafe_allow_html=True
-    )
-    def create_half_circle_gauge(value, max_value):
-        # Calculate the angle for the value on the half circle
-        angle = (value / max_value) * 180
-        if angle > 180:
-            angle = 180
-        elif value <= 0:
-            angle = 0
+# with col3:
+#     st.markdown(
+#         """
+#         <div style="text-align:center">
+#             <h3>Days Inventory Outstanding</h3>
+#         </div>
+#         """,
+#         unsafe_allow_html=True
+#     )
+#     def create_half_circle_gauge(value, max_value):
+#         # Calculate the angle for the value on the half circle
+#         angle = (value / max_value) * 180
+#         if angle > 180:
+#             angle = 180
+#         elif value <= 0:
+#             angle = 0
 
-        # Create a half-circle gauge using matplotlib
-        fig, ax = plt.subplots(subplot_kw={'aspect': 'equal'})
-        # fig.set_facecolor('#262C46')
-        ax.set_facecolor('#262C46')
-        ax.add_patch(
-            patches.Arc((0.5, 0.5), 0.8, 0.8, theta1=0, theta2=180, facecolor='white', edgecolor='#262C46', lw=3))
-        ax.add_patch(
-            patches.Arc((0.5, 0.5), 0.8, 0.8, theta1=180 - angle, theta2=180, facecolor='red', edgecolor='red', lw=3))
+#         # Create a half-circle gauge using matplotlib
+#         fig, ax = plt.subplots(subplot_kw={'aspect': 'equal'})
+#         # fig.set_facecolor('#262C46')
+#         ax.set_facecolor('#262C46')
+#         ax.add_patch(
+#             patches.Arc((0.5, 0.5), 0.8, 0.8, theta1=0, theta2=180, facecolor='white', edgecolor='#262C46', lw=3))
+#         ax.add_patch(
+#             patches.Arc((0.5, 0.5), 0.8, 0.8, theta1=180 - angle, theta2=180, facecolor='red', edgecolor='red', lw=3))
 
-        # Add the indicator
-        indicator = np.radians(180 - angle)
-        x = 0.5 + 0.35 * np.cos(indicator)
-        y = 0.5 + 0.35 * np.sin(indicator)
-        ax.arrow(0.5, 0.5, x - 0.5, y - 0.5, width=0.02, head_width=0.04, head_length=0.04, fc='#E0EAEF', ec='#E0EAEF',
-                 alpha=0.8)
+#         # Add the indicator
+#         indicator = np.radians(180 - angle)
+#         x = 0.5 + 0.35 * np.cos(indicator)
+#         y = 0.5 + 0.35 * np.sin(indicator)
+#         ax.arrow(0.5, 0.5, x - 0.5, y - 0.5, width=0.02, head_width=0.04, head_length=0.04, fc='#E0EAEF', ec='#E0EAEF',
+#                  alpha=0.8)
 
-        # Add labels
-        plt.text(0.5, 0.7, f"{value} Days", fontsize=18, ha='center', va='center', color='#262C46')
-        # plt.text(0.5, 0.85, label, fontsize=12, ha='center', va='center')
+#         # Add labels
+#         plt.text(0.5, 0.7, f"{value} Days", fontsize=18, ha='center', va='center', color='#262C46')
+#         # plt.text(0.5, 0.85, label, fontsize=12, ha='center', va='center')
 
-        ax.set_xlim(0, 1)
-        ax.set_ylim(0, 1)
-        ax.axis('off')
+#         ax.set_xlim(0, 1)
+#         ax.set_ylim(0, 1)
+#         ax.axis('off')
 
-        # Display the half-circle gauge chart in Streamlit
-        st.pyplot(fig)
+#         # Display the half-circle gauge chart in Streamlit
+#         st.pyplot(fig)
 
 
-    # Sample values
-    value = round(w['DOI'].median(), 2)
-    max_value = w['DOI'].quantile(0.75)
-    # label = "Days Inventory Outstanding"
+#     # Sample values
+#     value = round(w['DOI'].median(), 2)
+#     max_value = w['DOI'].quantile(0.75)
+#     # label = "Days Inventory Outstanding"
 
-    # Create the half-circle gauge chart with an indicator
-    create_half_circle_gauge(value, max_value)
+#     # Create the half-circle gauge chart with an indicator
+#     create_half_circle_gauge(value, max_value)
 
 col4, col5 = st.columns(2)
 with col4:
