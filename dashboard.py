@@ -49,7 +49,7 @@ with col2:
     )
     brand_sales = s.groupby('Brand')['InventoryValue'].sum().reset_index().head(10)
     brand_sales.index = brand_sales['Brand']
-    
+    st.bar_chart(brand_sales['InventoryValue'])
 
 
 
